@@ -1,0 +1,77 @@
+/* Import Custom Font */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/Minecraft.ttf') format('truetype');
+}
+
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'CustomFont', sans-serif; /* Apply custom font to body */
+    color: white;
+    overflow: hidden;
+}
+
+/* 1. Landing Page Styles (index.html) */
+
+/* Center the button on a black background */
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+#enter-button {
+    font-family: 'CustomFont', sans-serif; /* Ensure custom font for the button */
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#enter-button:hover {
+    transform: scale(1.1);
+}
+
+/* 2. Main Page Styles (main.html) */
+
+/* Video container to fill the screen */
+.video-container video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Center the logo and text in the middle of the screen */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Logo styles with hover animation */
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+/* Text under the logo */
+.logo-container p {
+    margin-top: 10px;
+    font-size: 18px;
+}
